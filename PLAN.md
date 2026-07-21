@@ -52,6 +52,34 @@ Cada página es un **feature standalone** con su ruta en `app.routes.ts`.
 > **La carga es pareja.** Las 4 vistas + 2 artículos de A equivalen al contacto +
 > las 3 piezas dinámicas con Signals/Reactive Forms de B.
 
+### Mapa de dependencias (issues #1–#10)
+
+**A y B trabajan 100% en paralelo. Entre ramas NO hay dependencias** (no comparten
+archivos). La única regla de secuencia es que **#10 (Home) va último y en conjunto**.
+
+```
+A (rama-a):  #5 ─┐            B (rama-b):  #8 ── #7 ── #9 ── #6
+             #1  ├─ paralelo               (casi independientes entre sí)
+             #2  │
+             #3 ─┘ (tras #5)
+             #4 ─┘ (tras #5)
+                        └──────────┬──────────┘
+                              #10 Home (juntas, al final)
+```
+
+| Issue | Depende de | Tipo |
+|---|---|---|
+| #1 Servicios, #2 Equipo | — | independiente |
+| #5 Contenido (2 artículos) | — | independiente (hacer temprano) |
+| #3 Blog índice, #4 Artículo | #5 | **blando** (se maqueta con stub `ARTICULOS`, se llena luego) |
+| #7 Ficha GBP, #8 Badge, #9 Modal | — | independientes |
+| #6 Contacto | #7, #8 (los embebe) | **blando**, todo dentro de B |
+| #10 Home | #1–#9 | **duro** — al final, en conjunto |
+
+- **Único bloqueo duro entre participantes:** #10.
+- Dentro de A: hacer **#5 temprano** para no re-trabajar #3/#4.
+- Dentro de B: #6 se puede armar con huecos para `<app-gbp-card>`/`<app-hours-badge>` y completarlos al integrar.
+
 ---
 
 ## c) Flujo de trabajo con git
