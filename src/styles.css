@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-bg text-ink font-sans antialiased;
+  }
+  h1, h2, h3 {
+    @apply font-serif;
+  }
+}
+
+@layer components {
+  /* Botón "Pedir turno" — DESIGN.md §5 (CTA petróleo, texto blanco) */
+  .btn-cta {
+    @apply inline-flex items-center justify-center gap-2 rounded bg-ink px-6 py-3
+           font-sans text-sm font-semibold uppercase tracking-wide text-white
+           transition-shadow hover:shadow-ambient focus-visible:outline-2
+           focus-visible:outline-offset-2 focus-visible:outline-accent;
+  }
+  /* Contenedor central — DESIGN.md §3 */
+  .container-x {
+    @apply mx-auto w-full max-w-container px-5 md:px-16;
+  }
+}
