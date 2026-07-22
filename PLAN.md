@@ -199,7 +199,19 @@ git push origin main
 
 > Formato: `[fecha] [colaboradora] — qué voy a tocar / qué avisé`
 
-- _(vacío — arrancamos acá)_
+- [2026-07-22] [A] — Terminados #5, #1, #2, #3, #4 en `rama-a` (solo carpetas propias:
+  `features/servicios`, `features/equipo`, `features/blog`). Decisiones tomadas:
+  - **CTA "Pedir turno" → `routerLink="/contacto"`** en Servicios, Blog índice y plantilla
+    de artículo. NO se cableó al modal (`appointment-modal` / `appointment.service` son de B
+    y no viven en `rama-a`). **Para B en la integración de Home:** reemplazar esos
+    `routerLink="/contacto"` por el disparador del modal.
+  - **Fechas del blog**: helper `features/blog/fecha.ts` con `Intl.DateTimeFormat('es-AR')`,
+    anclado a `T12:00:00` para evitar corrimiento de día por timezone. No se registró locale
+    global (evita tocar archivos compartidos).
+  - **Imágenes**: `picsum.photos` con `seed` estable (fotos de fantasía, placeholder demo).
+  - **Íconos de Servicios**: SVG inline de trazo fino (1.25px) guardados como `path d` en la data.
+  - La clase componente `Articulo` NO importa la interfaz `Articulo` (usa `ARTICULOS` directo)
+    para evitar colisión de nombres.
 
 ---
 
