@@ -1,5 +1,6 @@
-import { Component, signal } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
+import { AppointmentService } from '../../../core/services/appointment.service';
 
 // Navegación superior fija — componente compartido (PLAN.md §d). Congelado tras Paso 0.
 @Component({
@@ -44,7 +45,7 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
             </li>
           }
           <li>
-            <a routerLink="/contacto" class="btn-cta" (click)="open.set(false)">Pedir turno</a>
+            <button type="button" class="btn-cta" (click)="pedirTurno()">Pedir turno</button>
           </li>
         </ul>
       </nav>
@@ -54,7 +55,14 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
   `,
 })
 export class Nav {
+  private readonly appointment = inject(AppointmentService);
   protected readonly open = signal(false);
+
+  protected pedirTurno() {
+    this.open.set(false);
+    this.appointment.open();
+  }
+
   protected readonly links = [
     { path: '/', label: 'Inicio' },
     { path: '/servicios', label: 'Servicios' },

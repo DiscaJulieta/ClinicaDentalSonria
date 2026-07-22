@@ -10,6 +10,7 @@ module.exports = {
         ink: '#12333F',     // texto y CTA (azul petróleo)
         brand: '#8FCFC4',   // marca menta
         accent: '#C9A96A',  // dorado — solo detalles finos
+        error: '#BA1A1A',   // validación de formularios (DESIGN.md §1)
       },
       fontFamily: {
         serif: ['"Source Serif 4"', 'serif'], // títulos
