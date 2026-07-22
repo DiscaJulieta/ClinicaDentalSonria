@@ -39,10 +39,10 @@ Cada página es un **feature standalone** con su ruta en `app.routes.ts`.
       `features/blog/blog-data.ts` (array tipado `Articulo[]`)
 
 ### Colaboradora B — "Piezas dinámicas + contacto"
-- [ ] `features/contacto` (componente + Reactive Form)
-- [ ] `shared/components/gbp-card` — ficha Google Business (**componente reutilizable**)
-- [ ] `shared/components/hours-badge` + `core/services/schedule.service` — badge de horario (**Signals**)
-- [ ] `shared/components/appointment-modal` — modal "Pedir turno" (**Reactive Form + Signals**)
+- [x] `features/contacto` (componente + Reactive Form) — #6
+- [x] `shared/components/gbp-card` — ficha Google Business (**componente reutilizable**) — #7
+- [x] `shared/components/hours-badge` + `core/services/schedule.service` — badge de horario (**Signals**) — #8
+- [x] `shared/components/appointment-modal` — modal "Pedir turno" (**Reactive Form + Signals**) — #9
 
 ### Ambas juntas al final
 - [ ] `features/home` — integra componentes de las dos (héroe con badge+modal de B,
@@ -216,6 +216,20 @@ git push origin main
   - **Íconos de Servicios**: SVG inline de trazo fino (1.25px) guardados como `path d` en la data.
   - La clase componente `Articulo` NO importa la interfaz `Articulo` (usa `ARTICULOS` directo)
     para evitar colisión de nombres.
+- [2026-07-22] B (Juli) — toqué 4 archivos compartidos para las issues #6–#9:
+  - `styles.css`: agregué `.label-campo`, `.campo`, `.error` (estilo de inputs de
+    DESIGN.md §5, lo usan el modal de turno y el form de contacto).
+  - `tailwind.config.js`: agregué el token `error: '#BA1A1A'` (ya estaba en DESIGN.md §1).
+  - `app.html` / `app.ts`: monté `<app-appointment-modal />` una sola vez (PLAN §f.2).
+  - `nav`: el CTA "Pedir turno" pasó de `<a routerLink="/contacto">` a `<button>` que
+    abre el modal por `AppointmentService`. **A: si necesitás el CTA en tus vistas,
+    inyectá `AppointmentService` y llamá `open()`.**
+  - Revisé `rama-a` para alinear estilo (eyebrow `text-accent`, `mt-3 max-w-2xl` en h1,
+    cuerpo `text-ink/70`, cards con hover `-translate-y-0.5`). **Hallazgo para A:** en
+    `features/blog/articulo.ts`, `ActivatedRoute.snapshot` se lee una sola vez; al ir de
+    un artículo a otro desde "Seguí leyendo" cambia la URL pero el contenido queda en el
+    artículo anterior (verificado en el navegador). Se arregla leyendo el `paramMap` como
+    signal/observable en vez de `snapshot`. No lo toqué: es archivo de A.
 
 ---
 

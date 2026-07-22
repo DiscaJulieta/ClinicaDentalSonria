@@ -19,6 +19,17 @@
            transition-shadow hover:shadow-ambient focus-visible:outline-2
            focus-visible:outline-offset-2 focus-visible:outline-accent;
   }
+  /* Campos de formulario — DESIGN.md §5 (borde inferior, foco dorado) */
+  .label-campo {
+    @apply block font-sans text-xs font-semibold uppercase tracking-widest text-ink/70;
+  }
+  .campo {
+    @apply mt-2 w-full border-0 border-b border-ink/30 bg-transparent px-0 py-2
+           font-sans text-base text-ink focus:border-accent focus:outline-none;
+  }
+  .error {
+    @apply mt-1 font-sans text-sm text-error;
+  }
   /* Contenedor central — DESIGN.md §3 */
   .container-x {
     @apply mx-auto w-full max-w-container px-5 md:px-16;
