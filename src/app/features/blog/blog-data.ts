@@ -21,7 +21,7 @@ export const ARTICULOS: Articulo[] = [
     fecha: '2026-06-18',
     autor: 'Dra. Valentina Ríos',
     minutosLectura: 6,
-    imagen: 'https://picsum.photos/seed/cuidado-post-implante/1200/675',
+    imagen: '/assets/blog/cuidado-post-implante.jpg',
     cuerpo: [
       'Cuando salís del consultorio con un implante recién colocado, tenés en la boca una pieza de titanio que todavía no es parte de tu cuerpo. Lo será, pero eso lleva tiempo: entre ocho y doce semanas de un proceso silencioso llamado osteointegración, en el que el hueso crece y abraza la superficie del implante hasta hacerlo indistinguible de una raíz natural. Lo que hagas durante esas primeras semanas pesa muchísimo más de lo que la mayoría imagina.',
       'Las primeras cuarenta y ocho horas son las más sensibles. Es normal que haya algo de inflamación, una molestia sorda y, a veces, un poco de sangrado leve. Nada de eso debería asustarte: es la respuesta lógica del cuerpo ante una intervención. Lo que sí conviene es tenerle respeto. Aplicá frío las primeras horas —una bolsa de gel sobre la mejilla, veinte minutos sí y veinte minutos no— y mantené la cabeza un poco elevada cuando descanses. Ese gesto simple reduce la hinchazón más que cualquier pastilla.',
@@ -43,7 +43,7 @@ export const ARTICULOS: Articulo[] = [
     fecha: '2026-07-02',
     autor: 'Dr. Tomás Aguilar',
     minutosLectura: 7,
-    imagen: 'https://picsum.photos/seed/mitos-del-blanqueamiento/1200/675',
+    imagen: '/assets/blog/mitos-del-blanqueamiento.jpg',
     cuerpo: [
       'Pocos tratamientos generan tantas preguntas —y tanta desinformación— como el blanqueamiento dental. Es entendible: es visible, es deseado, y hay una industria enorme empujando productos de todo tipo. Vale la pena entonces poner algunas cosas en su lugar, porque una sonrisa más clara está muy al alcance, pero no de cualquier manera.',
       'Mito uno: “el blanqueamiento arruina el esmalte”. Es probablemente el más difundido y el más falso. Los blanqueamientos profesionales trabajan con peróxido de hidrógeno o de carbamida, que actúan liberando oxígeno dentro del diente y rompiendo las moléculas que le dan color a la mancha. No raspan, no desgastan, no adelgazan el esmalte. Lo que sí puede pasar es una sensibilidad temporal mientras dura el tratamiento, algo muy distinto a un daño estructural. La estructura del diente queda intacta.',

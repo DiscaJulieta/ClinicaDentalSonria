@@ -208,7 +208,11 @@ git push origin main
   - **Fechas del blog**: helper `features/blog/fecha.ts` con `Intl.DateTimeFormat('es-AR')`,
     anclado a `T12:00:00` para evitar corrimiento de día por timezone. No se registró locale
     global (evita tocar archivos compartidos).
-  - **Imágenes**: `picsum.photos` con `seed` estable (fotos de fantasía, placeholder demo).
+  - **Imágenes**: fotos reales de stock (Pexels, licencia libre) descargadas y versionadas en
+    `public/assets/equipo/` y `public/assets/blog/`, referenciadas con rutas absolutas `/assets/...`.
+    Elegidas y verificadas visualmente una por una (equipo con 6 personas distintas). No se usan las
+    del diseño Stitch porque ese proyecto no es accesible desde esta cuenta y sus "fotos" no son assets
+    exportables. Reemplazables si aparece el material original.
   - **Íconos de Servicios**: SVG inline de trazo fino (1.25px) guardados como `path d` en la data.
   - La clase componente `Articulo` NO importa la interfaz `Articulo` (usa `ARTICULOS` directo)
     para evitar colisión de nombres.

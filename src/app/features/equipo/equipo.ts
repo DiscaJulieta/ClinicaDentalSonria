@@ -70,37 +70,37 @@ export class Equipo {
       nombre: 'Dra. Valentina Ríos',
       especialidad: 'Implantología y cirugía',
       bio: 'Se formó en Buenos Aires y en Barcelona. Le obsesiona la precisión, pero atiende con una calma que se contagia. Dirige la clínica desde 2014.',
-      foto: 'https://picsum.photos/seed/valentina-rios/600/750',
+      foto: '/assets/equipo/valentina-rios.jpg',
     },
     {
       nombre: 'Dr. Tomás Aguilar',
       especialidad: 'Estética y rehabilitación',
       bio: 'Diseño de sonrisa y carillas. Cree que el mejor trabajo es el que no se nota. Fanático de explicar cada paso antes de tocar nada.',
-      foto: 'https://picsum.photos/seed/tomas-aguilar/600/750',
+      foto: '/assets/equipo/tomas-aguilar.jpg',
     },
     {
       nombre: 'Dra. Camila Ferrari',
       especialidad: 'Ortodoncia',
       bio: 'Especialista en alineadores invisibles. Acompaña tratamientos largos con un seguimiento cercano para que nunca te sientas solo en el camino.',
-      foto: 'https://picsum.photos/seed/camila-ferrari/600/750',
+      foto: '/assets/equipo/camila-ferrari.jpg',
     },
     {
       nombre: 'Dr. Nicolás Bravo',
       especialidad: 'Odontopediatría',
       bio: 'El que hace que los más chicos quieran volver. Paciencia infinita y una caja de stickers que renueva todas las semanas.',
-      foto: 'https://picsum.photos/seed/nicolas-bravo/600/750',
+      foto: '/assets/equipo/nicolas-bravo.jpg',
     },
     {
       nombre: 'Lucía Méndez',
       especialidad: 'Higienista dental',
       bio: 'La primera cara que ves al entrar. Higiene profesional y educación de hábitos, con la teoría de que prevenir siempre es más lindo que curar.',
-      foto: 'https://picsum.photos/seed/lucia-mendez/600/750',
+      foto: '/assets/equipo/lucia-mendez.jpg',
     },
     {
       nombre: 'Martín Sosa',
       especialidad: 'Coordinación de pacientes',
       bio: 'Ordena la agenda, resuelve dudas y se asegura de que nada se pierda entre turno y turno. Si escribís a la clínica, seguro te responde él.',
-      foto: 'https://picsum.photos/seed/martin-sosa/600/750',
+      foto: '/assets/equipo/martin-sosa.jpg',
     },
   ];
 
