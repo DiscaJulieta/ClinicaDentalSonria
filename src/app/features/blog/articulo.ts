@@ -1,5 +1,8 @@
-import { Component, inject } from '@angular/core';
+import { Component, computed, inject } from '@angular/core';
+import { toSignal } from '@angular/core/rxjs-interop';
+import { map } from 'rxjs';
 import { ActivatedRoute, RouterLink } from '@angular/router';
+import { AppointmentService } from '../../core/services/appointment.service';
 import { ARTICULOS } from './blog-data';
 import { fechaLarga } from './fecha';
 
@@ -7,7 +10,7 @@ import { fechaLarga } from './fecha';
   selector: 'app-articulo',
   imports: [RouterLink],
   template: `
-    @if (articulo; as a) {
+    @if (articulo(); as a) {
       <article class="pb-section">
         <header class="container-x pt-section">
           <p class="text-xs font-semibold uppercase tracking-widest text-accent">{{ a.categoria }}</p>
@@ -30,11 +33,11 @@ import { fechaLarga } from './fecha';
           }
         </div>
 
-        @if (relacionados.length) {
+        @if (relacionados().length) {
           <section class="container-x mt-20 border-t border-ink/10 pt-12">
             <h2 class="font-serif text-2xl font-medium tracking-tight">Seguí leyendo</h2>
             <ul class="mt-8 grid gap-8 sm:grid-cols-2">
-              @for (r of relacionados; track r.slug) {
+              @for (r of relacionados(); track r.slug) {
                 <li class="group">
                   <a [routerLink]="['/blog', r.slug]" class="block">
                     <p class="text-xs font-semibold uppercase tracking-widest text-accent">{{ r.categoria }}</p>
@@ -51,7 +54,7 @@ import { fechaLarga } from './fecha';
 
         <div class="container-x mt-20 flex flex-col items-start gap-4 rounded-lg bg-alt p-8 md:flex-row md:items-center md:justify-between md:p-12">
           <p class="font-serif text-2xl tracking-tight">¿Te quedaron dudas? Charlémoslas en persona.</p>
-          <a routerLink="/contacto" class="btn-cta">Pedir turno</a>
+          <button type="button" class="btn-cta" (click)="pedirTurno()">Pedir turno</button>
         </div>
       </article>
     } @else {
@@ -67,8 +70,20 @@ import { fechaLarga } from './fecha';
   `,
 })
 export class Articulo {
-  private readonly slug = inject(ActivatedRoute).snapshot.paramMap.get('slug');
+  private readonly appointment = inject(AppointmentService);
+
+  // El componente se reutiliza al ir de un artículo a otro: hay que leer el param
+  // como signal, no con snapshot (si no, cambia la URL y el contenido no).
+  private readonly slug = toSignal(
+    inject(ActivatedRoute).paramMap.pipe(map((p) => p.get('slug'))),
+  );
   protected readonly fecha = fechaLarga;
-  protected readonly articulo = ARTICULOS.find((a) => a.slug === this.slug);
-  protected readonly relacionados = ARTICULOS.filter((a) => a.slug !== this.slug).slice(0, 2);
+  protected readonly articulo = computed(() => ARTICULOS.find((a) => a.slug === this.slug()));
+  protected readonly relacionados = computed(() =>
+    ARTICULOS.filter((a) => a.slug !== this.slug()).slice(0, 2),
+  );
+
+  protected pedirTurno() {
+    this.appointment.open();
+  }
 }
