@@ -11,8 +11,8 @@ import { fechaLarga } from './fecha';
   imports: [RouterLink],
   template: `
     @if (articulo(); as a) {
-      <article class="pb-20 md:pb-section">
-        <header class="container-x pt-20 md:pt-section">
+      <article class="pb-16 md:pb-20">
+        <header class="container-x pt-16 md:pt-20">
           <p class="text-xs font-semibold uppercase tracking-widest text-accent">{{ a.categoria }}</p>
           <h1 class="mt-3 max-w-3xl font-serif text-[40px] font-semibold leading-tight tracking-[-0.02em] md:text-[56px]">
             {{ a.titulo }}
@@ -58,7 +58,7 @@ import { fechaLarga } from './fecha';
         </div>
       </article>
     } @else {
-      <section class="container-x py-20 md:py-section text-center">
+      <section class="container-x py-16 md:py-20 text-center">
         <p class="text-xs font-semibold uppercase tracking-widest text-accent">Artículo no encontrado</p>
         <h1 class="mt-3 font-serif text-[32px] font-semibold tracking-tight md:text-[40px]">
           Esta nota no existe o fue movida

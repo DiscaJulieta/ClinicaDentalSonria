@@ -7,9 +7,9 @@ import { fechaLarga } from './fecha';
   selector: 'app-blog-list',
   imports: [RouterLink],
   template: `
-    <section class="container-x py-20 md:py-section">
+    <section class="container-x py-16 md:py-20">
       <p class="text-xs font-semibold uppercase tracking-widest text-accent">Blog</p>
-      <h1 class="mt-3 max-w-2xl font-serif text-[40px] font-semibold leading-tight tracking-[-0.02em] md:text-[56px]">
+      <h1 class="mt-3 max-w-3xl text-balance font-serif text-[40px] font-semibold leading-tight tracking-[-0.02em] md:text-[56px]">
         Notas para cuidar tu sonrisa
       </h1>
       <p class="mt-4 max-w-xl text-lg leading-relaxed text-ink/70">

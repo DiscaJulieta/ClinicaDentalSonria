@@ -13,27 +13,34 @@ import { SERVICIOS } from '../servicios/servicios-data';
   selector: 'app-home',
   imports: [RouterLink, GbpCard, HoursBadge],
   template: `
-    <section class="container-x py-20 md:py-section">
-      <app-hours-badge />
-      <h1 class="mt-6 max-w-3xl font-serif text-[40px] font-semibold leading-tight tracking-[-0.02em] md:text-[56px]">
-        Una clínica dental donde el tiempo alcanza
-      </h1>
-      <p class="mt-4 max-w-xl text-lg leading-relaxed text-ink/70">
-        Turnos largos, diagnóstico claro y un equipo en el que siempre te atiende la misma
-        persona. Así entendemos nosotros la odontología.
-      </p>
-      <div class="mt-10 flex flex-wrap items-center gap-6">
-        <button type="button" class="btn-cta" (click)="pedirTurno()">Pedir turno</button>
-        <a routerLink="/servicios" class="inline-flex min-h-11 items-center text-sm font-semibold uppercase tracking-wide text-ink underline decoration-accent underline-offset-8">
-          Ver servicios
-        </a>
+    <section class="container-x grid items-center gap-12 py-16 md:py-20 lg:grid-cols-2 lg:gap-20">
+      <div>
+        <app-hours-badge />
+        <h1 class="mt-6 font-serif text-[40px] font-semibold leading-tight tracking-[-0.02em] md:text-[56px]">
+          Una clínica dental donde el tiempo alcanza
+        </h1>
+        <p class="mt-4 max-w-xl text-lg leading-relaxed text-ink/70">
+          Turnos largos, diagnóstico claro y un equipo en el que siempre te atiende la misma
+          persona. Así entendemos nosotros la odontología.
+        </p>
+        <div class="mt-8 flex flex-wrap items-center gap-6">
+          <button type="button" class="btn-cta" (click)="pedirTurno()">Pedir turno</button>
+          <a routerLink="/servicios" class="inline-flex min-h-11 items-center text-sm font-semibold uppercase tracking-wide text-ink underline decoration-accent underline-offset-8">
+            Ver servicios
+          </a>
+        </div>
       </div>
+      <img
+        src="/assets/blog/mitos-del-blanqueamiento.jpg"
+        alt="Paciente sonriendo después de un tratamiento en la clínica"
+        class="aspect-[4/3] w-full rounded-lg border border-ink/10 object-cover lg:aspect-[4/5]"
+      />
     </section>
 
     <section class="bg-alt">
-      <div class="container-x py-20 md:py-section">
+      <div class="container-x py-16 md:py-20">
         <p class="text-xs font-semibold uppercase tracking-widest text-accent">Qué hacemos</p>
-        <h2 class="mt-3 font-serif text-[32px] font-medium leading-tight tracking-tight md:text-[40px]">
+        <h2 class="mt-3 max-w-2xl text-balance font-serif text-[32px] font-medium leading-tight tracking-tight md:text-[40px]">
           Tratamientos que resolvemos todos los días
         </h2>
         <ul class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -56,15 +63,15 @@ import { SERVICIOS } from '../servicios/servicios-data';
             </li>
           }
         </ul>
-        <a routerLink="/servicios" class="mt-10 inline-flex min-h-11 items-center text-sm font-semibold uppercase tracking-wide text-ink underline decoration-accent underline-offset-8">
+        <a routerLink="/servicios" class="mt-8 inline-flex min-h-11 items-center text-sm font-semibold uppercase tracking-wide text-ink underline decoration-accent underline-offset-8">
           Ver todos los servicios
         </a>
       </div>
     </section>
 
-    <section class="container-x py-20 md:py-section">
+    <section class="container-x py-16 md:py-20">
       <p class="text-xs font-semibold uppercase tracking-widest text-accent">Quiénes somos</p>
-      <h2 class="mt-3 font-serif text-[32px] font-medium leading-tight tracking-tight md:text-[40px]">
+      <h2 class="mt-3 max-w-2xl text-balance font-serif text-[32px] font-medium leading-tight tracking-tight md:text-[40px]">
         El equipo que te va a atender
       </h2>
       <ul class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -85,15 +92,15 @@ import { SERVICIOS } from '../servicios/servicios-data';
           </li>
         }
       </ul>
-      <a routerLink="/equipo" class="mt-10 inline-flex min-h-11 items-center text-sm font-semibold uppercase tracking-wide text-ink underline decoration-accent underline-offset-8">
+      <a routerLink="/equipo" class="mt-8 inline-flex min-h-11 items-center text-sm font-semibold uppercase tracking-wide text-ink underline decoration-accent underline-offset-8">
         Conocé al equipo completo
       </a>
     </section>
 
     <section class="bg-alt">
-      <div class="container-x py-20 md:py-section">
+      <div class="container-x py-16 md:py-20">
         <p class="text-xs font-semibold uppercase tracking-widest text-accent">Del blog</p>
-        <h2 class="mt-3 font-serif text-[32px] font-medium leading-tight tracking-tight md:text-[40px]">
+        <h2 class="mt-3 max-w-2xl text-balance font-serif text-[32px] font-medium leading-tight tracking-tight md:text-[40px]">
           Para leer antes de tu próxima visita
         </h2>
         <ul class="mt-10 grid gap-8 sm:grid-cols-2">
@@ -125,11 +132,11 @@ import { SERVICIOS } from '../servicios/servicios-data';
       </div>
     </section>
 
-    <section class="container-x py-20 md:py-section">
+    <section class="container-x py-16 md:py-20">
       <div class="grid gap-12 lg:grid-cols-2">
         <div>
           <p class="text-xs font-semibold uppercase tracking-widest text-accent">Dónde estamos</p>
-          <h2 class="mt-3 font-serif text-[32px] font-medium leading-tight tracking-tight md:text-[40px]">
+          <h2 class="mt-3 max-w-2xl text-balance font-serif text-[32px] font-medium leading-tight tracking-tight md:text-[40px]">
             Te esperamos en el centro
           </h2>
           <address class="mt-6 not-italic leading-relaxed text-ink/70">

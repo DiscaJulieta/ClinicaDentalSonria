@@ -6,7 +6,7 @@ import { RouterLink } from '@angular/router';
   selector: 'app-footer',
   imports: [RouterLink],
   template: `
-    <footer class="mt-20 md:mt-section bg-alt">
+    <footer class="mt-16 md:mt-20 bg-alt">
       <div class="h-px bg-accent"></div>
       <div class="container-x grid gap-8 py-12 md:grid-cols-3">
         <div>

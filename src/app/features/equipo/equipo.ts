@@ -4,9 +4,9 @@ import { EQUIPO, VALORES } from './equipo-data';
 @Component({
   selector: 'app-equipo',
   template: `
-    <section class="container-x py-20 md:py-section">
+    <section class="container-x py-16 md:py-20">
       <p class="text-xs font-semibold uppercase tracking-widest text-accent">Quiénes somos</p>
-      <h1 class="mt-3 max-w-2xl font-serif text-[40px] font-semibold leading-tight tracking-[-0.02em] md:text-[56px]">
+      <h1 class="mt-3 max-w-3xl text-balance font-serif text-[40px] font-semibold leading-tight tracking-[-0.02em] md:text-[56px]">
         Un equipo chico que te conoce por tu nombre
       </h1>
       <p class="mt-4 max-w-xl text-lg leading-relaxed text-ink/70">
@@ -35,7 +35,7 @@ import { EQUIPO, VALORES } from './equipo-data';
     </section>
 
     <section class="bg-alt">
-      <div class="container-x py-20 md:py-section">
+      <div class="container-x py-16 md:py-20">
         <p class="text-xs font-semibold uppercase tracking-widest text-accent">Cómo trabajamos</p>
         <h2 class="mt-3 max-w-2xl font-serif text-[32px] font-medium leading-tight tracking-tight md:text-[40px]">
           Elegancia clínica, sin apuros ni frialdad de consultorio

@@ -7,7 +7,7 @@ import { AppointmentService } from '../../../core/services/appointment.service';
   selector: 'app-nav',
   imports: [RouterLink, RouterLinkActive],
   template: `
-    <header class="fixed inset-x-0 top-0 z-40 bg-bg/90 backdrop-blur">
+    <header class="fixed inset-x-0 top-0 z-40 bg-bg/95 backdrop-blur">
       <nav
         class="container-x flex items-center justify-between py-4"
         aria-label="Navegación principal"
