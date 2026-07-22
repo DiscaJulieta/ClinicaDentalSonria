@@ -12,7 +12,9 @@ import { AppointmentService } from '../../../core/services/appointment.service';
         class="container-x flex items-center justify-between py-4"
         aria-label="Navegación principal"
       >
-        <a routerLink="/" class="font-serif text-xl font-semibold text-ink">Sonría</a>
+        <a routerLink="/" class="inline-flex min-h-11 items-center font-serif text-xl font-semibold text-ink">
+          Sonría
+        </a>
 
         <button
           type="button"
