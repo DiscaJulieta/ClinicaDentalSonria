@@ -6,7 +6,7 @@ import { RouterLink } from '@angular/router';
   selector: 'app-footer',
   imports: [RouterLink],
   template: `
-    <footer class="mt-section bg-alt">
+    <footer class="mt-20 md:mt-section bg-alt">
       <div class="h-px bg-accent"></div>
       <div class="container-x grid gap-8 py-12 md:grid-cols-3">
         <div>
@@ -16,11 +16,14 @@ import { RouterLink } from '@angular/router';
           </p>
         </div>
         <nav aria-label="Enlaces del pie">
-          <ul class="space-y-2 text-sm">
-            <li><a routerLink="/servicios" class="hover:text-accent">Servicios</a></li>
-            <li><a routerLink="/equipo" class="hover:text-accent">Equipo</a></li>
-            <li><a routerLink="/blog" class="hover:text-accent">Blog</a></li>
-            <li><a routerLink="/contacto" class="hover:text-accent">Contacto</a></li>
+          <ul class="text-sm">
+            @for (l of links; track l.path) {
+              <li>
+                <a [routerLink]="l.path" class="inline-flex min-h-11 items-center hover:text-accent">
+                  {{ l.label }}
+                </a>
+              </li>
+            }
           </ul>
         </nav>
         <address class="text-sm not-italic text-ink/70">
@@ -35,4 +38,11 @@ import { RouterLink } from '@angular/router';
     </footer>
   `,
 })
-export class Footer {}
+export class Footer {
+  protected readonly links = [
+    { path: '/servicios', label: 'Servicios' },
+    { path: '/equipo', label: 'Equipo' },
+    { path: '/blog', label: 'Blog' },
+    { path: '/contacto', label: 'Contacto' },
+  ];
+}

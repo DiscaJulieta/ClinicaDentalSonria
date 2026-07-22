@@ -13,7 +13,7 @@ import { SERVICIOS } from '../servicios/servicios-data';
   selector: 'app-home',
   imports: [RouterLink, GbpCard, HoursBadge],
   template: `
-    <section class="container-x py-section">
+    <section class="container-x py-20 md:py-section">
       <app-hours-badge />
       <h1 class="mt-6 max-w-3xl font-serif text-[40px] font-semibold leading-tight tracking-[-0.02em] md:text-[56px]">
         Una clínica dental donde el tiempo alcanza
@@ -24,14 +24,14 @@ import { SERVICIOS } from '../servicios/servicios-data';
       </p>
       <div class="mt-10 flex flex-wrap items-center gap-6">
         <button type="button" class="btn-cta" (click)="pedirTurno()">Pedir turno</button>
-        <a routerLink="/servicios" class="text-sm font-semibold uppercase tracking-wide text-ink underline decoration-accent underline-offset-8">
+        <a routerLink="/servicios" class="inline-flex min-h-11 items-center text-sm font-semibold uppercase tracking-wide text-ink underline decoration-accent underline-offset-8">
           Ver servicios
         </a>
       </div>
     </section>
 
     <section class="bg-alt">
-      <div class="container-x py-section">
+      <div class="container-x py-20 md:py-section">
         <p class="text-xs font-semibold uppercase tracking-widest text-accent">Qué hacemos</p>
         <h2 class="mt-3 font-serif text-[32px] font-medium leading-tight tracking-tight md:text-[40px]">
           Tratamientos que resolvemos todos los días
@@ -56,13 +56,13 @@ import { SERVICIOS } from '../servicios/servicios-data';
             </li>
           }
         </ul>
-        <a routerLink="/servicios" class="mt-10 inline-block text-sm font-semibold uppercase tracking-wide text-ink underline decoration-accent underline-offset-8">
+        <a routerLink="/servicios" class="mt-10 inline-flex min-h-11 items-center text-sm font-semibold uppercase tracking-wide text-ink underline decoration-accent underline-offset-8">
           Ver todos los servicios
         </a>
       </div>
     </section>
 
-    <section class="container-x py-section">
+    <section class="container-x py-20 md:py-section">
       <p class="text-xs font-semibold uppercase tracking-widest text-accent">Quiénes somos</p>
       <h2 class="mt-3 font-serif text-[32px] font-medium leading-tight tracking-tight md:text-[40px]">
         El equipo que te va a atender
@@ -85,13 +85,13 @@ import { SERVICIOS } from '../servicios/servicios-data';
           </li>
         }
       </ul>
-      <a routerLink="/equipo" class="mt-10 inline-block text-sm font-semibold uppercase tracking-wide text-ink underline decoration-accent underline-offset-8">
+      <a routerLink="/equipo" class="mt-10 inline-flex min-h-11 items-center text-sm font-semibold uppercase tracking-wide text-ink underline decoration-accent underline-offset-8">
         Conocé al equipo completo
       </a>
     </section>
 
     <section class="bg-alt">
-      <div class="container-x py-section">
+      <div class="container-x py-20 md:py-section">
         <p class="text-xs font-semibold uppercase tracking-widest text-accent">Del blog</p>
         <h2 class="mt-3 font-serif text-[32px] font-medium leading-tight tracking-tight md:text-[40px]">
           Para leer antes de tu próxima visita
@@ -125,7 +125,7 @@ import { SERVICIOS } from '../servicios/servicios-data';
       </div>
     </section>
 
-    <section class="container-x py-section">
+    <section class="container-x py-20 md:py-section">
       <div class="grid gap-12 lg:grid-cols-2">
         <div>
           <p class="text-xs font-semibold uppercase tracking-widest text-accent">Dónde estamos</p>

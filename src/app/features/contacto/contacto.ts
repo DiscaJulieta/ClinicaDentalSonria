@@ -10,7 +10,7 @@ import { WhatsappModal } from './whatsapp-modal';
   selector: 'app-contacto',
   imports: [ReactiveFormsModule, GbpCard, HoursBadge, WhatsappModal],
   template: `
-    <section class="container-x py-section" aria-labelledby="contacto-titulo">
+    <section class="container-x py-20 md:py-section" aria-labelledby="contacto-titulo">
       <p class="text-xs font-semibold uppercase tracking-widest text-accent">Contacto</p>
       <h1
         id="contacto-titulo"

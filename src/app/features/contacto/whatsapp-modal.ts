@@ -16,7 +16,7 @@ import {
       role="dialog"
       aria-modal="true"
       aria-labelledby="wsp-titulo"
-      class="w-[min(92vw,26rem)] overflow-hidden rounded-lg border border-ink/10 bg-alt p-0 text-ink"
+      class="max-h-[85vh] w-[min(92vw,26rem)] overflow-y-auto rounded-lg border border-ink/10 bg-alt p-0 text-ink"
       (close)="cerrado.emit()"
       (click)="clickEnFondo($event)"
     >

@@ -5,7 +5,7 @@ import { SERVICIOS } from './servicios-data';
 @Component({
   selector: 'app-servicios',
   template: `
-    <section class="container-x py-section">
+    <section class="container-x py-20 md:py-section">
       <p class="text-xs font-semibold uppercase tracking-widest text-accent">Nuestros servicios</p>
       <h1 class="mt-3 max-w-2xl font-serif text-[40px] font-semibold leading-tight tracking-[-0.02em] md:text-[56px]">
         Odontología pensada con calma y detalle

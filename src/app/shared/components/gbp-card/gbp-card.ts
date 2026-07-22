@@ -43,7 +43,7 @@ export interface Resena {
         @for (accion of acciones; track accion) {
           <button
             type="button"
-            class="rounded border border-ink/20 px-4 py-2 text-sm text-ink transition-colors hover:border-accent focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
+            class="rounded border border-ink/20 px-4 py-3 text-sm text-ink transition-colors hover:border-accent focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
             [attr.aria-label]="accion + ' (demo, sin acción real)'"
           >
             {{ accion }}

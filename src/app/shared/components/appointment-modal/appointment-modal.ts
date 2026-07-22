@@ -12,7 +12,7 @@ import { AppointmentService } from '../../../core/services/appointment.service';
       role="dialog"
       aria-modal="true"
       aria-labelledby="turno-titulo"
-      class="w-[min(92vw,34rem)] rounded-lg border border-ink/10 bg-bg p-6 text-ink md:p-10"
+      class="max-h-[85vh] w-[min(92vw,34rem)] overflow-y-auto rounded-lg border border-ink/10 bg-bg p-6 text-ink md:p-10"
       (close)="cerrar()"
       (click)="clickEnFondo($event)"
     >
