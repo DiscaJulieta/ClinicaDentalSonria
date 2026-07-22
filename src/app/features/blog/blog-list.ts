@@ -17,7 +17,8 @@ import { fechaLarga } from './fecha';
         de cada tratamiento.
       </p>
 
-      <ul class="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+      <!-- auto-fit: con 2 artículos las cards llenan el ancho; con más, se acomodan solas -->
+      <ul class="mt-12 grid gap-8 [grid-template-columns:repeat(auto-fit,minmax(300px,1fr))]">
         @for (a of articulos; track a.slug) {
           <li class="group">
             <a [routerLink]="['/blog', a.slug]" class="block">
