@@ -1,0 +1,14 @@
+# Netlify — sitio Angular (SPA client-side, sin backend)
+[build]
+  command = "npm run build"
+  publish = "dist/sonria/browser"
+
+[build.environment]
+  NODE_VERSION = "20"
+
+# SPA fallback: las rutas del router (ej. /blog/:slug) las resuelve Angular,
+# así que todo path sin archivo cae en index.html con 200 (no 404 al refrescar).
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
